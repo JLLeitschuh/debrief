@@ -7,16 +7,12 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
 
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.event.ListDataListener;
 
 import org.geotools.geometry.jts.ReferencedEnvelope;
 import org.mwc.debrief.lite.gui.DebriefLiteToolParent;
@@ -334,7 +330,6 @@ public class DebriefRibbonInsert
             public void run()
             {
               String[] layers = theLayers.trimmedLayers();         
-              @SuppressWarnings("unchecked")
               
               String selectedItem = (String)selectLayerCombo.getSelectedItem();
               selectLayerModel.removeAllElements();
