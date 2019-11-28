@@ -1210,15 +1210,6 @@ public class FixWrapper extends PlainWrapper implements Watchable,
 
     // reset the colour
     setColorQuiet(null);
-
-    // check that/if we have an area for this fix
-    final WorldLocation wl = theFix.getLocation();
-    if (wl != null)
-    {
-      // store the area
-      _myArea = new WorldArea(wl, wl);
-    }
-
   }
 
   /**
@@ -1824,15 +1815,10 @@ public class FixWrapper extends PlainWrapper implements Watchable,
     _theLocationWrapper.setLocation(val);
 
     // try to reduce object allocation, if we can...
-    if (_myArea == null)
+    if (_myArea != null)
     {
-      _myArea = new WorldArea(val, val);
-    }
-    else
-    {
-      // just reuse our current object
-      _myArea.setTopLeft(val);
-      _myArea.setBottomRight(val);
+      // clear the area. We'll re-create it when we need to
+      _myArea = null;
     }
 
     // lastly, if we're using a label format that

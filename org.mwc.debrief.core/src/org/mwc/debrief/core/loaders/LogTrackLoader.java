@@ -258,7 +258,7 @@ public class LogTrackLoader extends CoreLoader
 
       // and the date?
       Date dt = loader.dateFor(blocks[0]);
-      assertEquals("correct date", "23-Aug-2014", DateFormat.getDateInstance()
+      assertEquals("correct date", "23 Aug 2014", DateFormat.getDateInstance()
           .format(dt));
       // note, 23rd Aug is summer, so daylight savings time is present in the
       // next value

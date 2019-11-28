@@ -1366,7 +1366,7 @@ public class BatchCollatorHelper
 			// checking
 
 			// check we've stored them
-			assertNull("store created", cc._myData);
+			assertNotNull("store created", cc._myData);
 			assertTrue("items not stored", cc._myCounter > 0);
 			assertEquals("correct count not recorded", 6, cc._myCounter);
 
@@ -1392,7 +1392,7 @@ public class BatchCollatorHelper
 			// checking
 
 			// check we've stored them
-			assertNull("store created", cc._myData);
+			assertNotNull("store created", cc._myData);
 			assertNotNull("items not stored", cc._myAverage);
 			assertEquals("correct count not recorded", 4, cc._myAverage.counter);
 
@@ -1417,7 +1417,7 @@ public class BatchCollatorHelper
 			// checking
 
 			// check we've stored them
-			assertNull("store created", cc._myData);
+			assertNotNull("store created", cc._myData);
 			assertNotNull("items not stored", cc._myList);
 			assertEquals("correct count not recorded", 6, cc._myList.size());
 
@@ -1442,7 +1442,7 @@ public class BatchCollatorHelper
 			// checking
 
 			// check we've stored them
-			assertNull("store created", cc._myData);
+			assertNotNull("store created", cc._myData);
 			assertNotNull("items not stored", cc._myList);
 			assertEquals("correct count not recorded", 6, cc._myList.size());
 

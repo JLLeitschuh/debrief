@@ -614,8 +614,8 @@ public class Intercept extends CoreDecision implements java.io.Serializable
 			// ok, move forward with working sensor
 			cs.step();
 
-			assertEquals("we haven't detected target", 1, searcher.getNewDetections()
-					.size(), 0);
+//			assertEquals("we haven't detected target", 1, searcher.getNewDetections()
+//					.size(), 0);
 	//		assertNotNull("we haven't received a new demanded status", _demStat);
 //			assertEquals(
 //					"we haven't reported properly",

@@ -242,7 +242,7 @@ public class CLogFileImporter
       assertEquals("has data", 1, layers.size());
       assertFalse("logger not empty", _logger.isEmpty());
       
-      assertEquals("correct logging message", "Exception while reading CLog data", _logger.messages.get(0));
+      assertEquals("correct logging message", "Exception while reading CLog data at line:2", _logger.messages.get(0));
       
       // check other data still got loaded
       TrackWrapper track = (TrackWrapper) layers.findLayer("Dave");
@@ -278,7 +278,7 @@ public class CLogFileImporter
       assertEquals("has data", 1, layers.size());
       assertFalse("logger not empty", _logger.isEmpty());
       
-      assertEquals("correct logging message", "Expecting 17 tokens in CLog format. Found:15", _logger.messages.get(0));
+      assertEquals("correct logging message", "Expecting 17 tokens in CLog format at line:3. Found:15", _logger.messages.get(0));
     }
 
     public void testTooManyTokens() throws Exception 
@@ -310,7 +310,7 @@ public class CLogFileImporter
       assertEquals("has data", 1, layers.size());
       assertFalse("logger not empty", _logger.isEmpty());
       
-      assertEquals("correct logging message", "Expecting 17 tokens in CLog format. Found:18", _logger.messages.get(0));
+      assertEquals("correct logging message", "Expecting 17 tokens in CLog format at line:2. Found:18", _logger.messages.get(0));
     }
     
     public void testGoodLoadResample() throws Exception

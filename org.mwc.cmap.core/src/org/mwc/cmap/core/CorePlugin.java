@@ -649,28 +649,29 @@ public class CorePlugin extends AbstractUIPlugin implements ClipboardOwner,
       }
     };
 
-    if (Display.getCurrent() != null)
+    // see if the workbench is running yet
+    // Note: we wrap it in try/catch so that we can
+    // test our CMAPOperation classes in a headless way
+    try
     {
-      runnable.run();
-    }
-    else
-    {
-      // see if the workbench is running yet
-      // Note: we wrap it in try/catch so that we can
-      // test our CMAPOperation classes in a headless way
-      try
+      if (Display.getCurrent() != null)
+      {
+        runnable.run();
+      }
+      else
       {
         if (PlatformUI.isWorkbenchRunning())
         {
           Display.getDefault().syncExec(runnable);
         }
       }
-      catch (final NoClassDefFoundError dd)
-      {
-        System.err.println("Class not found:" + dd.getMessage()
-            + " (ok if in JUnit testing)");
-      }
     }
+    catch (final NoClassDefFoundError dd)
+    {
+      System.err.println("Class not found:" + dd.getMessage()
+          + " (ok if in JUnit testing)");
+    }
+
     return contexts[0];
   }
 
